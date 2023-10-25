@@ -1,8 +1,48 @@
-Æ14:51:15.846 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
-Æ14:51:15.854 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn1: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
-à14:51:15.857 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV0Test - findMember=Member(memberId=memberV0, money=10000)
-Æ14:51:15.891 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn2: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
-_14:51:15.893 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV0 - resultSize=1
-Æ14:51:15.896 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn3: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
-Æ14:51:15.901 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn4: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
-Æ14:51:15.904 [Test worker] INFO com.jdbc.practice.DBConnectionUtil - get connection=conn5: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class org.h2.jdbc.JdbcConnection
+\02:12:16.192 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1Test - start
+`02:12:16.193 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+{02:12:16.195 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension................................false
+q02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit................................true
+n02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - catalog................................none
+x02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql................................none
+z02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery................................none
+y02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout................................30000
+q02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - dataSource................................none
+z02:12:16.196 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName................................none
+u02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI................................none
+ä02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties................................{password=<masked>}
+v02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................................none
+Å02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName................................none
+z02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties................................{}
+z02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry................................none
+t02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout................................600000
+}02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout................................1
+~02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries................................false
+à02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl................................jdbc:h2:tcp://localhost/~/test
+q02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime................................0
+z02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold................................0
+u02:12:16.197 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime................................1800000
+t02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize................................10
+u02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry................................none
+|02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory................................none
+p02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle................................10
+s02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - password................................<masked>
+y02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - poolName................................"HikariPool-1"
+p02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - readOnly................................false
+v02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans................................false
+x02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor................................none
+m02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - schema................................none
+x02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory................................internal
+~02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation................................default
+o02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - username................................"sa"
+x02:12:16.198 [Test worker] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout................................5000
+`02:12:16.198 [Test worker] INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+¢02:12:16.203 [Test worker] DEBUG com.zaxxer.hikari.util.DriverDataSource - Loaded driver with class name org.h2.Driver for jdbcUrl=jdbc:h2:tcp://localhost/~/test
+ó02:12:16.243 [Test worker] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/test user=SA
+e02:12:16.244 [Test worker] INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+ˆ02:12:16.245 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@400064818 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
+ˆ02:12:16.260 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@166454155 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
+ˆ02:12:16.293 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@582666172 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
+_02:12:16.297 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - resultSize=1
+˜02:12:16.297 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@1668910247 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
+˜02:12:16.299 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@1238080693 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
+˜02:12:16.300 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV1 - get connection=HikariProxyConnection@1988644427 wrapping conn0: url=jdbc:h2:tcp://localhost/~/test user=SA, class=class com.zaxxer.hikari.pool.HikariProxyConnection
