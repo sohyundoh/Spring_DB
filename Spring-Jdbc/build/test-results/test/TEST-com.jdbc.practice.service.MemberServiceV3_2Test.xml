@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jdbc.practice.service.MemberServiceV3_2Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-11-01T07:56:07" hostname="dosohyeon-ui-MacBookAir.local" time="0.177">
+  <properties/>
+  <testcase name="이체중 예외 발생" classname="com.jdbc.practice.service.MemberServiceV3_2Test" time="0.147"/>
+  <testcase name="정상 이체" classname="com.jdbc.practice.service.MemberServiceV3_2Test" time="0.029"/>
+  <system-out><![CDATA[16:56:07.602 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.604 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.643 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn0: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.649 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.649 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.651 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn1: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.668 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+16:56:07.668 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.672 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [conn2: url=jdbc:h2:tcp://localhost/~/test user=SA] for JDBC transaction
+16:56:07.673 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [conn2: url=jdbc:h2:tcp://localhost/~/test user=SA] to manual commit
+16:56:07.673 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn2: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.675 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn2: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.675 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn2: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.677 [Test worker] DEBUG org.springframework.transaction.support.TransactionTemplate - Initiating transaction rollback on application exception
+java.lang.IllegalStateException: 이체중 예외 발생
+	at com.jdbc.practice.service.MemberServiceV3_2.validation(MemberServiceV3_2.java:43)
+	at com.jdbc.practice.service.MemberServiceV3_2.bizLogic(MemberServiceV3_2.java:37)
+	at com.jdbc.practice.service.MemberServiceV3_2.lambda$accountTransfer$0(MemberServiceV3_2.java:25)
+	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
+	at com.jdbc.practice.service.MemberServiceV3_2.accountTransfer(MemberServiceV3_2.java:22)
+	at com.jdbc.practice.service.MemberServiceV3_2Test.lambda$accountTransferEx$0(MemberServiceV3_2Test.java:70)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:63)
+	at org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:878)
+	at org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy(AssertionsForClassTypes.java:732)
+	at com.jdbc.practice.service.MemberServiceV3_2Test.accountTransferEx(MemberServiceV3_2Test.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:118)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:93)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:88)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+16:56:07.681 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction rollback
+16:56:07.681 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Rolling back JDBC transaction on Connection [conn2: url=jdbc:h2:tcp://localhost/~/test user=SA]
+16:56:07.683 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [conn2: url=jdbc:h2:tcp://localhost/~/test user=SA] after transaction
+16:56:07.690 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.690 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.694 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn3: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.695 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.695 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.698 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn4: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.701 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.702 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.704 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn5: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.705 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.705 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.707 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn6: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.708 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.708 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.710 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn7: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.715 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.715 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.721 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn8: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.723 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.723 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.725 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn9: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.726 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+16:56:07.726 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.729 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [conn10: url=jdbc:h2:tcp://localhost/~/test user=SA] for JDBC transaction
+16:56:07.729 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [conn10: url=jdbc:h2:tcp://localhost/~/test user=SA] to manual commit
+16:56:07.730 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn10: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.730 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn10: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.731 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn10: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.731 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn10: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.732 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+16:56:07.732 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [conn10: url=jdbc:h2:tcp://localhost/~/test user=SA]
+16:56:07.732 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [conn10: url=jdbc:h2:tcp://localhost/~/test user=SA] after transaction
+16:56:07.733 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.733 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.734 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn11: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.735 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.735 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.736 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn12: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.737 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.737 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.738 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn13: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.739 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.739 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.740 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn14: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+16:56:07.741 [Test worker] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+16:56:07.741 [Test worker] DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test]
+16:56:07.743 [Test worker] INFO com.jdbc.practice.repository.MemberRepositoryV3 - get connection=conn15: url=jdbc:h2:tcp://localhost/~/test user=SA class=class org.h2.jdbc.JdbcConnection
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
